@@ -1,3 +1,261 @@
+<html>
+    <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body>
+    <container>
+    <div id="video_container" >
+        <video id="video1" autoplay>
+            <source id="mp4video" src="http://savetheyouth-iteration1.tk/wp-content/uploads/2019/08/1.mp4" type=video/mp4>
+        </video>
+        <div id="playpause"></div>
+      <div id="button_layer">
+          <button id="go_back"><span><i class="fa fa-arrow-left" aria-hidden="true" ></i></span> Back</button>
+          <button id="go_next"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>Next</button>
+          <button id="replay"><span><i class="fa fa-undo" aria-hidden="true"></i></span> Replay</button>
+          
+         
+        </div>  
+        <div id="first_selection_layer">
+            <button id="laugh"></button>
+            <button id="help"></button>
+            <button id="goaway"></button>
+        </div>
+        
+            <button id="reselection"></button>
+        <div id="second_selection_layer">
+            <button id="argue"></button>
+            <button id="askhelp"></button>
+        </div>
+        
+        <div id="bus_selection_layer">
+            <button id="sit"></button>
+            <button id="notsit"></button>
+             </div>
+             
+             <div>
+                 <input type="button" value="Pause" id="play"></input>
+             </div>
+             
+    </div>
+        </container>
+    </body>
+    
+    <style>
+     #video_container{
+        position: relative;
+        display: table;
+        width: auto;
+    }
+    
+    #video1{
+        border: 1px solid black;
+    }
+   
+
+    #button_layer{
+        display: none;
+    }
+    #go_back{
+        border-radius: 20px;padding: 15px; background-color: darkorange;position: absolute;left: 5%;bottom: 5%;border: none;color: aliceblue;font-family: fantasy;font-size:15px;cursor: pointer; border: none;
+    }
+    #replay{
+        border-radius: 20px;padding: 15px; background-color: darkorange;position: absolute;right: 45%;bottom: 5%;border: none;color: aliceblue;font-family: fantasy;font-size:15px;cursor: pointer;border: none;
+    }
+    #go_next{
+        border-radius: 20px;padding: 15px; background-color: darkorange;position: absolute;right: 5%;bottom: 5%;border: none;color: aliceblue;font-family: fantasy;font-size:15px;cursor: pointer;border: none;
+    }
+    
+    #play{
+    width:20%;
+    height:20%;
+    position:absolute;
+    left:0%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    margin:auto;
+    font-size:40px;
+    background-color: transparent;
+    color: transparent;
+    }
+     #play:hover{
+    width:20%;
+    height:20%;
+    position:absolute;
+    left:0%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    margin:auto;
+    font-size:40px;
+    background-color: darkorange;
+    color: white;
+    }
+    
+    #replay:hover{
+        background-color: darkgreen;
+        transition: 0.5s;
+    }
+    #go_next:hover{
+        background-color: darkgreen;
+        transition: 0.5s;
+    }
+    #go_back:hover{
+        background-color: darkgreen;
+        transition: 0.5s;
+    }
+    #first_selection_layer{
+        display: none;
+    }
+    #second_selection_layer{
+        display: none;
+    }
+        #bus_selection_layer{
+            display: none;
+        }
+    
+    #reselection{
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        display: none;
+    }
+    
+    #laugh{
+        position: absolute;
+        top: 32%;
+        left: 12%;
+        width: 42%;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+       
+    }
+     #help{
+        position: absolute;
+        top: 51%;
+        left: 12%;
+        width: 42%;
+        height: 50px;
+         border: none;
+         background-color: transparent;
+         
+    }
+     #goaway{
+        position: absolute;
+        top: 70%;
+        left: 12%;
+        width: 42%;
+        height: 50px;
+         border: none;
+         background-color: transparent;
+         
+    }
+        
+        #argue{
+        position: absolute;
+        top: 43%;
+        left: 15%;
+        width: 51%;
+        height: 50px;
+         border: none;
+         background-color: transparent;
+         
+    }
+     #askhelp{
+        position: absolute;
+        top: 72%;
+        left: 15%;
+        width: 51%;
+        height: 50px;
+         border: none;
+         background-color: transparent;
+         
+    }
+        #sit{
+            position:absolute;
+            top:68%;
+            left:22%;
+            width: 25%;
+            height:50px;
+            border:none;
+           background-color: transparent;
+        }
+        #notsit{
+            position: absolute;
+            top:82%;
+            left: 22%;
+            width: 25%;
+            height: 50px;
+            border:none;
+            background-color: transparent;
+        }
+</style>
+    
+<script type="text/javascript">
+    var videocontainer = document.getElementById('video1');
+    var videosource = document.getElementById('mp4video');
+    var buttonGroup = document.getElementById('button_layer')
+    var video = 'http://savetheyouth-iteration1.tk/wp-content/uploads/2019/08/'
+    var nextbutton = document.getElementById('go_next');
+    var backbutton = document.getElementById('go_back');
+    var replaybutton = document.getElementById('replay');
+    var laughbutton = document.getElementById('laugh');
+    var helpbutton = document.getElementById('help');
+    var goawaybutton = document.getElementById('goaway');
+    var reselection = document.getElementById('reselection');
+    var arguebutton = document.getElementById('argue');
+    var askhelpbutton = document.getElementById('askhelp');
+    var sitbutton = document.getElementById('sit');
+    var notsitbutton = document.getElementById('notsit');
+    var playbutton = document.getElementById('play');
+    var pausebutton = document.getElementById('pause');
+    
+    var videoNumber = 1;
+    var play = true;
+    nextbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+    if(videoNumber==4){
+        videoNumber=6;
+    }else if(videoNumber==12){
+        videoNumber=18
+    }else{
+        videoNumber = videoNumber + 1;}
+  document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+        document.getElementById('bus_selection_layer').style.display = 'none' ;
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.load();
+        //console.log(videoNumber);
+    videocontainer.play();
+    playbutton.value = "Pause";
+}, false);
+    
+    
+    backbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+    if(videoNumber==6){
+        videoNumber=4
+    }else if(videoNumber==18){
+        videoNumber=12
+    }else{
+        videoNumber = videoNumber - 1;}
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+        document.getElementById('bus_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+         playbutton.value = "Pause";
+}, false); 
+    
+    
     videocontainer.pause();
     if(videoNumber==6){
         videoNumber=4
@@ -43,5 +301,266 @@
            nextbutton.addEventListener("click", function(event) {
     videocontainer.pause();
         videoNumber = 6;
+
+
+
+    
+    replaybutton.addEventListener("click", function(event) {
+       document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+        document.getElementById('bus_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+    videocontainer.play();
+    playbutton.value = "Pause";
+}, false);
+    
+    
+    videocontainer.onended = function(){
+       console.log(videoNumber);
+      document.getElementById('button_layer').style.display = 'block' ;
+       if(videoNumber == 1)
+           {
+               document.getElementById('go_back').style.display = 'none';
+           }
+        else{
+            document.getElementById('go_back').style.display = 'block';
+        }
+        /*
+        if(videoNumber == 4)
+        {
+           nextbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 6;
+  document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+        document.getElementById('bus_selection_layer').style.display = 'none' ;
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.load();
+        //console.log(videoNumber);
+    videocontainer.play();
+    playbutton.value = "Pause";
+   // videoNumber = videoNumber
+}, false);
+        }*/
+        if(videoNumber == 2)
+           {
+               document.getElementById('bus_selection_layer').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+           if(videoNumber == 21)
+           {
+               document.getElementById('bus_selection_layer').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+       if(videoNumber == 9)
+           {
+               document.getElementById('first_selection_layer').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+       if(videoNumber == 22)
+           {
+               document.getElementById('first_selection_layer').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+       if(videoNumber == 20)
+           {
+               document.getElementById('reselection').style.display = 'none' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+       if(videoNumber == 13)
+           {
+               document.getElementById('reselection').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+        /*if(videoNumber == 12)
+           {
+               document.getElementById('reselection').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }*/
+        if(videoNumber == 5)
+           {
+               document.getElementById('reselection').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+        if(videoNumber == 23)
+            {
+               
+                document.getElementById('second_selection_layer').style.display = 'block' ;
+                document.getElementById('button_layer').style.display = 'none' ;
+            }
+        if(videoNumber == 12)
+            {
+               
+                document.getElementById('second_selection_layer').style.display = 'block' ;
+                document.getElementById('button_layer').style.display = 'none' ;
+            }
+        if(videoNumber == 17)
+           {
+               document.getElementById('reselection').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+        if(videoNumber == 16)
+           {
+               document.getElementById('reselection').style.display = 'block' ;
+               document.getElementById('button_layer').style.display = 'none' ;
+           }
+    
+         
+   }
+   
+    
+    
+    laughbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 14;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+         
+}, false); 
+    
+     reselection.addEventListener("click", function(event) {
+    videocontainer.pause();
+         if(videoNumber == 13){videoNumber = 22;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('reselection').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+             //videoNumber=22;/////////////
+         }
+          if(videoNumber == 5){videoNumber = 21;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('reselection').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();}
+        
+         if(videoNumber == 17){videoNumber = 23;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('reselection').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();}
+         
+          if(videoNumber == 16){videoNumber = 22;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('reselection').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();}
+}, false); 
+    
+    
+    
+    helpbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 10;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+         
+}, false); 
+    
+    
+    goawaybutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 13;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('first_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+         
+}, false); 
+    
+    
+     arguebutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 17;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('second_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+         
+}, false); 
+    
+    askhelpbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 18;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('second_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+         
+}, false); 
+    
+sitbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 3;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('bus_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+}, false); 
+    
+    
+notsitbutton.addEventListener("click", function(event) {
+    videocontainer.pause();
+        videoNumber = 5;
+   document.getElementById('button_layer').style.display = 'none' ;
+        document.getElementById('bus_selection_layer').style.display = 'none' ;
+    videocontainer.load();
+        //console.log(videoNumber);
+    videosource.setAttribute('src', video + videoNumber + '.mp4');
+    videocontainer.play();
+}, false); 
+
+playbutton.addEventListener("click", function(event) {
+   if(videocontainer.paused){
+   videocontainer.play();
+   document.getElementById('button_layer').style.display = 'none' ;
+   if(videoNumber == 1)
+   {
+               document.getElementById('go_back').style.display = 'none';
+           }
+   playbutton.value = "Pause";
+   play = false;
+ 
+   }
+   else{
+       videocontainer.pause();
+       document.getElementById('button_layer').style.display = 'block' ;
+       play = true;
+        playbutton.value = "Play";
+   }
+   
+}, false); 
+
+
+
+</script>
+</html>backbutton.addEventListener("click", function(event) {
+
+
+
+
 
 
