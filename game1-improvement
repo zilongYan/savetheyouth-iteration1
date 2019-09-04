@@ -8,13 +8,15 @@
         <video id="video1" autoplay>
             <source id="mp4video" src="http://savetheyouth-iteration1.tk/wp-content/uploads/2019/08/1.mp4" type=video/mp4>
         </video>
+        <div id="audio_container"><audio id="audio1" autoplay="autoplay"><source src="http://savetheyouth-iteration1.tk/wp-content/uploads/2019/09/After_School_Jamboree.mp3" type="audio/mpeg" /></audio></div>
+        
         <div id="playpause"></div>
       <div id="button_layer">
           <button id="go_back"><span><i class="fa fa-arrow-left" aria-hidden="true" ></i></span> Back</button>
           <button id="go_next"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>Next</button>
           <button id="replay"><span><i class="fa fa-undo" aria-hidden="true"></i></span> Replay</button>
           
-         
+
         </div>  
         <div id="first_selection_layer">
             <button id="laugh"></button>
@@ -47,6 +49,14 @@
         display: table;
         width: auto;
     }
+    
+    #audio_container{
+        position:absolute;
+        top:2%;
+        left:2%;
+    
+    }
+  
     
     #video1{
         border: 1px solid black;
@@ -198,6 +208,7 @@
 </style>
     
 <script type="text/javascript">
+    var audiocontainer = document.getElementById('audio1');
     var videocontainer = document.getElementById('video1');
     var videosource = document.getElementById('mp4video');
     var buttonGroup = document.getElementById('button_layer')
@@ -215,6 +226,7 @@
     var notsitbutton = document.getElementById('notsit');
     var playbutton = document.getElementById('play');
     var pausebutton = document.getElementById('pause');
+    var playmusic = document.getElementById('audio1')
     
     var videoNumber = 1;
     var play = true;
@@ -235,6 +247,7 @@
     videocontainer.play();
     playbutton.value = "Pause";
 }, false);
+
     
     
     backbutton.addEventListener("click", function(event) {
@@ -256,54 +269,6 @@
 }, false); 
     
     
-    videocontainer.pause();
-    if(videoNumber==6){
-        videoNumber=4
-    }else if(videoNumber==18){
-        videoNumber=12
-    }else{
-        videoNumber = videoNumber - 1;}
-   document.getElementById('button_layer').style.display = 'none' ;
-        document.getElementById('first_selection_layer').style.display = 'none' ;
-        document.getElementById('bus_selection_layer').style.display = 'none' ;
-    videocontainer.load();
-        //console.log(videoNumber);
-    videosource.setAttribute('src', video + videoNumber + '.mp4');
-    videocontainer.play();
-         playbutton.value = "Pause";
-}, false); 
-    
-    
-    
-    replaybutton.addEventListener("click", function(event) {
-       document.getElementById('button_layer').style.display = 'none' ;
-        document.getElementById('first_selection_layer').style.display = 'none' ;
-        document.getElementById('bus_selection_layer').style.display = 'none' ;
-    videocontainer.load();
-    videocontainer.play();
-    playbutton.value = "Pause";
-}, false);
-    
-    
-    videocontainer.onended = function(){
-       console.log(videoNumber);
-      document.getElementById('button_layer').style.display = 'block' ;
-       if(videoNumber == 1)
-           {
-               document.getElementById('go_back').style.display = 'none';
-           }
-        else{
-            document.getElementById('go_back').style.display = 'block';
-        }
-        /*
-        if(videoNumber == 4)
-        {
-           nextbutton.addEventListener("click", function(event) {
-    videocontainer.pause();
-        videoNumber = 6;
-
-
-
     
     replaybutton.addEventListener("click", function(event) {
        document.getElementById('button_layer').style.display = 'none' ;
@@ -535,6 +500,7 @@ notsitbutton.addEventListener("click", function(event) {
 
 playbutton.addEventListener("click", function(event) {
    if(videocontainer.paused){
+       playmusic.play();
    videocontainer.play();
    document.getElementById('button_layer').style.display = 'none' ;
    if(videoNumber == 1)
@@ -546,6 +512,7 @@ playbutton.addEventListener("click", function(event) {
  
    }
    else{
+       playmusic.pause();
        videocontainer.pause();
        document.getElementById('button_layer').style.display = 'block' ;
        play = true;
@@ -557,7 +524,7 @@ playbutton.addEventListener("click", function(event) {
 
 
 </script>
-</html>backbutton.addEventListener("click", function(event) {
+</html>
 
 
 
